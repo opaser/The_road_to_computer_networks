@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	if((sockfd = socket(AF_INET, SOCK_STREAM, 0)) < 0) {
-		fprintf(stderr , "inet_pton error for %s\n", argv[1]);
+		fprintf(stderr , "socker error\n");
 		exit(1);
 	}
 	bzero(&servaddr, sizeof(servaddr));
