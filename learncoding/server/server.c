@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 	while(1){
 		connfd = accept(listenfd, (SA *)NULL, NULL);
 		ticks = time(NULL);
-		snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
+		snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks)); 
 		write(connfd, buff, strlen(buff));
 		close(connfd);
 	}
