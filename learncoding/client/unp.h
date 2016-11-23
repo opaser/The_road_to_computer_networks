@@ -13,6 +13,6 @@
 
 //about #define
 #define MAXLINE 4096
-#define PORT 13
+#define PORT 9999
 #define SA struct sockaddr
 
