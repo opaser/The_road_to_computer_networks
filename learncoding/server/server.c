@@ -1,11 +1,12 @@
 #include "unp.h"
+#include <time.h>
 
 int main(int argc, char *argv[])
 {	
 	int listenfd,connfd;
 	struct sockaddr_in servaddr;
 	char buff[MAXLINE+1];
-	time_t t;
+	time_t ticks;
 	listenfd = socket(AF_INET, SOCK_STREAM, 0);
 
 	bzero(&servaddr, sizeof(servaddr));
@@ -16,8 +17,8 @@ int main(int argc, char *argv[])
 	listen(listenfd, LISTENQ);
 	while(1){
 		connfd = accept(listenfd, (SA *)NULL, NULL);
-		strcpy(buff, "this is a messsage\n");
-
+		ticks = time(NULL);
+		snprintf(buff, sizeof(buff), "%.24s\r\n", ctime(&ticks));
 		write(connfd, buff, strlen(buff));
 		close(connfd);
 	}

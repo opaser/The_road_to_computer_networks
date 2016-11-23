@@ -1,4 +1,4 @@
-#include<unq.h>
+#include "unp.h"
 
 int main(int argc, char *argv[])
 {
@@ -20,15 +20,15 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "inet_pton error for %s\n", argv[1]);
 		exit(1);
 	}
-	if(connect(sockfd,(SA *)&servaddr, sizeof(servaddr)) < 0) {
+	if(connect(sockfd,(SA *) &servaddr, sizeof(servaddr)) < 0) {
 		fprintf(stderr, "connect error\n");
 		exit(1);
 	}
-	while((n == read(sockfd, recvline, MAXLINE)) > 0) {
+	while((n = read(sockfd, recvline, MAXLINE)) > 0) {
 		recvline[n] = 0;
 		if(fputs(recvline, stdout) == EOF) {
 			fprintf(stderr, "fputs error\n");
-			exit(1)
+			exit(1);
 		}
 	}
 	if(n < 0) {
