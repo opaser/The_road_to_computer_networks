@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 	struct sockaddr_in cliaddr;
 	socklen_t len;
 	len = sizeof(cliaddr);
-	getsockname(sockfd, (SA *)&cliaddr, &len);
+	Getsockname(sockfd, (SA *)&cliaddr, &len);
 	printf("local addr : %s\n", Sock_ntop((SA * )&cliaddr, len )); 
 	while((n = read(sockfd, recvline, MAXLINE)) > 0) {
 		++ count;

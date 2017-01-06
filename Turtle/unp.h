@@ -12,14 +12,14 @@
 /* define var */
 #define MAXLINE 4096
 #define PORT 9999
-#define LISTENQ 1024
 #define SA struct sockaddr
 #define IPV6 11
+#define LISTENQ 1024
 /*sock_ntop.c */
 char * sock_ntop(const struct sockaddr *sa, socklen_t salen);
 char * Sock_ntop(const struct sockaddr *sa, socklen_t salen);
-
-
+/* wrapsock.c  */
+void Getsockname(int, SA *, socklen_t *);
 /*error.c */
 #include <errno.h>
 void err_sys(const char *, ...);

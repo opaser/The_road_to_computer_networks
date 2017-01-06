@@ -1,6 +1,6 @@
 #include "../unp.h"
 #include <time.h>
-#define LISTENQ 1024
+
 int main(int argc, char *argv[])
 {	
 	int listenfd,connfd;
@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
 	servaddr.sin_port = htons(PORT);
 	bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
-	listen(listenfd,LISTENQ);
+	listen(listenfd, LISTENQ);
 	while(1){
 		connfd = accept(listenfd, (SA *)NULL, NULL);
 		ticks = time(NULL);
