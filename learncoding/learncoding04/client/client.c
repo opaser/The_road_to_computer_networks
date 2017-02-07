@@ -1,4 +1,4 @@
-#include "unp.h"
+#include "../unp.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +24,11 @@ int main(int argc, char *argv[])
 		fprintf(stderr, "connect error\n");
 		exit(1);
 	}
+	struct sockaddr_in cliaddr;
+	socklen_t len;
+	len = sizeof(cliaddr);
+	Getsockname(sockfd, (SA *)&cliaddr, &len);
+	printf("local addr : %s\n", Sock_ntop((SA * )&cliaddr, len )); 
 	while((n = read(sockfd, recvline, MAXLINE)) > 0) {
 		++ count;
 		recvline[n] = 0;
