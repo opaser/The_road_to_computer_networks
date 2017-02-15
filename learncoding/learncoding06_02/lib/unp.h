@@ -43,7 +43,6 @@ void Connect(int, const SA*, socklen_t);
 int	 Socket(int, int, int);
 int  Select(int, fd_set *, fd_set *, fd_set *, struct timeval *);
 void Shutdown(int, int);
-int  Accept(int, SA *, socklen_t *);
 
 /* signal.c */
 Sigfunc *Signal(int, Sigfunc *);
