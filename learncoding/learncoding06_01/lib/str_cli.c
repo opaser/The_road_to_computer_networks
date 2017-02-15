@@ -11,14 +11,14 @@ str_cli(FILE *fp, int sockfd)
 		FD_SET(sockfd, &rset);
 		maxfdp1 = max(fileno(fp), sockfd) + 1;
 		Select(maxfdp1, &rset, NULL, NULL, NULL);
-		
+		printf("mark 1\n");		
 		if( FD_ISSET(sockfd, &rset) )	{
 			if(Readline(sockfd, recvline, MAXLINE) == 0)
 					err_quit("str_cli: server terminated prematurely");
 			Fputs(recvline, stdout);
 			printf("sockfd available\n");
 		}
-		
+		printf("mark 2\n");
 		if( FD_ISSET(fileno(fp), &rset) ){
 			if(Fgets(sendline, MAXLINE, fp) == NULL)
 				return ;
@@ -26,6 +26,6 @@ str_cli(FILE *fp, int sockfd)
 			printf("fp available\n");
 		}
 		
-		printf("xun huan\n");
+		printf("mark 3\n");
 	}
 }
