@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	struct sockaddr_in  cliaddr, servaddr;
 
 	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
-	printf("sysconf(_SC_OPEN_MAX) = %d\n", OPEN_MAX);
+	printf("sysconf(_SC_OPEN_MAX) can avaliable fd = %d\n", OPEN_MAX);
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family	=	AF_INET;
 	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
