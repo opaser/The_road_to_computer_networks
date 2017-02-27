@@ -123,3 +123,12 @@ Setsockopt(int fd, int level, int optname, const void *optval, socklen_t optlen)
 		err_sys("Setsockopt error");
 }
 /*end Setsockopt*/
+
+/*include Getsockopt*/
+void
+Getsockopt(int fd, int level, int optname, void *optval, socklen_t * optlenptr)
+{
+	if(getsockopt(fd, level, optname, optval, optlenptr) < 0)
+		err_sys("getsockopt error");
+}
+/*end Getsockop*/

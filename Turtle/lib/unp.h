@@ -14,6 +14,7 @@
 #include <sys/select.h>
 #include <sys/time.h>
 #include <poll.h>
+#include <netinet/sctp.h>
 /* define var */
 #define MAXLINE 4096
 #define SERV_PORT 9877
@@ -22,6 +23,7 @@
 #define IPV6 11
 #define LISTENQ 1024
 #define BUFFSIZE	8192
+#define SERV_MAX_SCTP_STRM 10
 
 #define FILE_MODE (S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH)
 #define DIR_MODE  (FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
@@ -52,6 +54,7 @@ int	 Poll(struct pollfd*, unsigned long, int);
 ssize_t Recvfrom(int, void *, size_t, int, SA *, socklen_t *);
 void Sendto(int, const void*, size_t, int, const SA *, socklen_t);
 void Setsockopt(int, int, int, const void *, socklen_t);
+void Getsockopt(int, int, int, void*, socklen_t*);
 
 /* signal.c */
 Sigfunc *Signal(int, Sigfunc *);
@@ -94,4 +97,23 @@ void dg_echo(int, SA *, socklen_t);
 
 /*dg_cli.c*/
 void dg_cli(FILE *, int, const SA *, socklen_t);
+
+/*sctp_wrapper.c*/
+int Sctp_recvmsg(int, void*, size_t, struct sockaddr*, socklen_t*, 
+									struct sctp_sndrcvinfo*, int*);
+int Sctp_sendmsg(int, void*, size_t, struct sockaddr*, socklen_t,
+									uint32_t, uint32_t, uint16_t, uint32_t, uint32_t);
+int Sctp_bindx(int, struct sockaddr_storage*, int, int);
+
+/*sctp_getnostrm.c*/
+int sctp_get_no_strms(int, struct sockaddr*, socklen_t);
+
+/*sctp_addr_to_associd.c*/
+sctp_assoc_t sctp_address_to_associd(int, struct sockaddr*, socklen_t);
+
+/*sctp_strcli.c*/
+void sctpstr_cli(FILE*, int, struct sockaddr*, socklen_t);
+
+/*sctp_strcliecho.c*/
+void sctpstr_cli_echoall(FILE*, int, struct sockaddr*, socklen_t);
 #endif

@@ -2,73 +2,47 @@
 int 
 main(int argc, char **argv)
 {	
-	int listenfd, connfd, udpfd, nready, maxfdp1;
-	char	mesg[MAXLINE];
-	pid_t	childpid;
-	fd_set	rset;
-	ssize_t	n;
-	socklen_t	len;
-	const int		on = 1;
-	struct sockaddr_in  cliaddr, servaddr;
-	void sig_chld(int);
-	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
-	
-	bzero(&servaddr, sizeof(servaddr));
-	servaddr.sin_family	= AF_INET;
-	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	servaddr.sin_port	= htons(SERV_PORT);
+	int sock_fd, msg_flags;
+	char readbuf[BUFFSIZE];
+	struct sockaddr_in servaddr, cliaddr;
+	struct sctp_sndrcvinfo sri;
+	struct sctp_event_subscribe evnts;
+	int stream_increment = 1;
+	socklen_t len;
+	size_t rd_sz;
 
-	Setsockopt(listenfd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on));
-	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
-	Listen(listenfd, LISTENQ);
-
-	udpfd = Socket(AF_INET, SOCK_DGRAM, 0);
-
+	if(argc == 2)
+		stream_increment = atoi(argv[1]);
+	sock_fd = Socket(AF_INET, SOCK_SEQPACKET, IPPROTO_SCTP);
 	bzero(&servaddr, sizeof(servaddr));
 	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr	= htonl(INADDR_ANY);
-	servaddr.sin_port				= htons(SERV_PORT);
+	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	servaddr.sin_port = htons(SERV_PORT);
 
-	Bind(udpfd, (SA*)&servaddr, sizeof(servaddr));
+	Bind(sock_fd, (SA*) &servaddr, sizeof(servaddr));
 
-	Signal(SIGCHLD, sig_chld);
+	bzero(&evnts, sizeof(evnts));
+	evnts.sctp_data_io_event = 1;
+  Setsockopt(sock_fd, IPPROTO_SCTP, SCTP_EVENTS,
+							&evnts, sizeof(evnts));
 
-	FD_ZERO(&rset);
-	maxfdp1	= max(listenfd, udpfd) + 1;
-	for(;;) {
-		FD_SET(listenfd, &rset);
-		FD_SET(udpfd, &rset);
-		if( (nready = select(maxfdp1, &rset, NULL, NULL, NULL)) < 0) {
-			if( errno = EINTR)
-				continue;
-			else
-				err_sys("select error");
+	Listen(sock_fd, LISTENQ);
+	for(;;){
+		len = sizeof(struct sockaddr_in);
+		rd_sz = Sctp_recvmsg(sock_fd, readbuf, sizeof(readbuf),
+													(SA*)&cliaddr, &len, &sri, &msg_flags);
+		if(stream_increment) {
+			sri.sinfo_stream++;
+			if(sri.sinfo_stream > sctp_get_no_strms(sock_fd, (SA *)&cliaddr, len))
+				sri.sinfo_stream = 0;
 		}
 
-		if(FD_ISSET(listenfd, &rset)) {
-			len = sizeof(cliaddr);
-			connfd = Accept(listenfd, (SA*)&cliaddr, &len);
-			
-			if((childpid = Fork()) == 0) {
-				Close(listenfd);
-				str_echo(connfd);
-				exit(0);
-			}
-			Close(connfd);
-		}
-		if(FD_ISSET(udpfd, &rset)) {
-			len = sizeof(cliaddr);
-			n = Recvfrom(udpfd, mesg, MAXLINE, 0, (SA *)&cliaddr, &len);
-			printf("udp receive length => %d, detail => %s",n,mesg);
-			mesg[n-1] = '.';
-			mesg[n] = 0;
-			strcat(mesg,"chen xin I love you too! use udp");
-			n = strlen(mesg);
-			mesg[n]='\n';
-			n = n+1;
-			printf("udp send length => %d, detail => %s",n,mesg);
-			Sendto(udpfd, mesg, n, 0, (SA *)&cliaddr, len);
-		}
+		Sctp_sendmsg(sock_fd, readbuf, rd_sz,
+									(SA *)&cliaddr, len, 
+									sri.sinfo_ppid,
+									sri.sinfo_flags,
+									sri.sinfo_stream,
+									0,0);
 	}
 	return 0;
 }
