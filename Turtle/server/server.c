@@ -1,16 +1,35 @@
 #include "../lib/unp.h"
+#include <time.h>
 
 int main(int argc, char **argv)
 {	
-	int sockfd;
-	struct sockaddr_un servaddr, cliaddr;
-	sockfd = Socket(AF_LOCAL, SOCK_DGRAM, 0);
-
-	unlink(UNIXDG_PATH);
+	int listenfd, connfd;
+	pid_t childpid;
+	socklen_t clilen;
+	struct sockaddr_in cliaddr, servaddr;
+	void	sig_chld(int);
+	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
 	bzero(&servaddr, sizeof(servaddr));
-	servaddr.sun_family = AF_LOCAL;
-	strcpy(servaddr.sun_path, UNIXDG_PATH);
-	Bind(sockfd, (SA *)&servaddr, sizeof(servaddr));
-	dg_echo(sockfd, (SA *) &cliaddr, sizeof(cliaddr));
+	servaddr.sin_family = AF_INET;
+	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	servaddr.sin_port = htons(SERV_PORT);
+	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
+	Listen(listenfd, LISTENQ);
+	Signal(SIGCHLD, sig_chld);
+	for(;;) {
+		clilen = sizeof(cliaddr);
+		if((connfd = accept(listenfd, (SA *) &cliaddr, &clilen) ) < 0 ) {
+			if (errno == EINTR)
+				continue;
+			else
+				err_sys("accept error");
+		}
+		if((childpid = Fork()) == 0) {
+			Close(listenfd);
+			str_echo(connfd);
+			exit(0);
+		}
+		Close(connfd);
+	}
 	return 0;
 }

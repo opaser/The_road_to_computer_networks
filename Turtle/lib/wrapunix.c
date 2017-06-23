@@ -42,3 +42,13 @@ Waitpid(pid_t pid, int *iptr, int options)
 	return(retpid);
 }
 /*end Waitpid*/
+
+/*include Fcntl*/
+int Fcntl(int fd, int cmd, int arg)
+{
+	int n;
+	if( (n = fcntl(fd, cmd, arg)) == -1)
+		err_sys("fcntl error");
+	return(n);
+}
+/*end Fcntl*/

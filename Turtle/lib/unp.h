@@ -78,6 +78,7 @@ pid_t Fork(void);
 ssize_t Read(int, void *, size_t);
 void	Write(int, void *, size_t);
 pid_t Waitpid(pid_t, int *, int);
+int   Fcntl(int, int, int);
 
 /* writen.c */
 ssize_t writen(int, const void *, size_t);
@@ -120,4 +121,10 @@ ssize_t Read_fd(int, void *, size_t, int *);
 
 /*write_fd.c*/
 ssize_t Write_fd(int, void *, size_t, int);
+
+/*gt_time.c*/
+char *gf_time(void);
+
+/*str_cli_nonb.c*/
+void str_cli_nonb(FILE *, int);
 #endif
