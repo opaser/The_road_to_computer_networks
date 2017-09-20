@@ -158,3 +158,22 @@ void Socketpair(int family, int type, int protocol, int *fd)
 }
 /*end Socketpair*/
 
+/*include Recv */
+ssize_t
+Recv(int fd, void *ptr, size_t nbytes, int flags)
+{
+	ssize_t n;
+	if( (n = recv(fd, ptr, nbytes, flags)) < 0)
+		err_sys("recv error");
+	return n;
+}
+/*end Recv*/
+
+/*include Send*/
+void
+Send(int fd, const void *ptr, size_t nbytes, int flags)
+{
+	if(send(fd, ptr, nbytes, flags) != (ssize_t)nbytes)
+		err_sys("send error");
+}
+/*end Send*/

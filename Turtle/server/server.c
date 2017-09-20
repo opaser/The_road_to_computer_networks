@@ -1,35 +1,47 @@
 #include "../lib/unp.h"
-#include <time.h>
+int listenfd , connfd;
+void sig_urg(int);
 
-int main(int argc, char **argv)
+int 
+main(int argc, char **argv)
 {	
-	int listenfd, connfd;
-	pid_t childpid;
-	socklen_t clilen;
-	struct sockaddr_in cliaddr, servaddr;
-	void	sig_chld(int);
-	listenfd = Socket(AF_INET, SOCK_STREAM, 0);
-	bzero(&servaddr, sizeof(servaddr));
-	servaddr.sin_family = AF_INET;
-	servaddr.sin_addr.s_addr = htonl(INADDR_ANY);
-	servaddr.sin_port = htons(SERV_PORT);
-	Bind(listenfd, (SA *) &servaddr, sizeof(servaddr));
-	Listen(listenfd, LISTENQ);
-	Signal(SIGCHLD, sig_chld);
-	for(;;) {
-		clilen = sizeof(cliaddr);
-		if((connfd = accept(listenfd, (SA *) &cliaddr, &clilen) ) < 0 ) {
-			if (errno == EINTR)
-				continue;
-			else
-				err_sys("accept error");
-		}
-		if((childpid = Fork()) == 0) {
-			Close(listenfd);
-			str_echo(connfd);
+	int 	n;
+	char buff[100];
+	if(argc == 2)
+	{
+		listenfd = Tcp_listen(NULL, argv[1], NULL);
+	}
+	else if(argc == 3)
+	{
+		listenfd = Tcp_listen(argv[1], argv[2], NULL);
+	}
+	else
+		err_quit("usage: tcprecv01 [ <host> ] <port#>");
+	connfd = Accept(listenfd, NULL, NULL);
+
+	Signal(SIGURG, sig_urg);
+	Fcntl(connfd, F_SETOWN, getpid());
+
+	for(; ;)
+	{
+		if( (n = Read(connfd, buff, sizeof(buff)-1)) == 0)
+		{
+			printf("received EOF\n");
 			exit(0);
 		}
-		Close(connfd);
+		buff[n] = 0;
+		printf("read %d bytes: %s\n", n, buff);
 	}
 	return 0;
+}
+void 
+sig_urg(int signo)
+{
+	int 	n;
+	char 	buff[100];
+	printf("SIGURG received\n");
+	n = Recv(connfd, buff, sizeof(buff)-1, MSG_OOB);
+	buff[n] = 0;
+	printf("read %d OOB byte: %s\n", n, buff);
+
 }

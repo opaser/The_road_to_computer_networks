@@ -49,7 +49,7 @@ str_cli_nonb(FILE *fp, int sockfd)
 				if(tooptr == toiptr)
 					Shutdown(sockfd, SHUT_WR);
 			} else {
-				fprintf(stderr, "%s: read %d bytes from stdin\n", gf_time(), n);
+				fprintf(stderr, "%s: read %d bytes from stdin\n", gf_time(),(int)n);
 				toiptr += n;
 				FD_SET(sockfd, &wset);
 			}
@@ -66,7 +66,7 @@ str_cli_nonb(FILE *fp, int sockfd)
 				else
 					err_quit("str_cli: server terminated prematurely");
 			} else {
-				fprintf(stderr, "%s: read %d bytes from socket\n", gf_time(), n);
+				fprintf(stderr, "%s: read %d bytes from socket\n", gf_time(), (int)n);
 				friptr += n;
 				FD_SET(STDOUT_FILENO, &wset);
 			}
@@ -77,7 +77,7 @@ str_cli_nonb(FILE *fp, int sockfd)
 				if (errno != EWOULDBLOCK)
 					err_sys("write error to stdout");
 			} else {
-				fprintf(stderr, "%s: wrote %d bytes to stdout\n", gf_time(), nwritten);
+				fprintf(stderr, "%s: wrote %d bytes to stdout\n", gf_time(), (int)nwritten);
 				froptr += nwritten;
 				if(froptr == friptr)
 					froptr = friptr = fr;
@@ -91,7 +91,7 @@ str_cli_nonb(FILE *fp, int sockfd)
 				if(errno != EWOULDBLOCK)
 					err_sys("write error to socket");
 			}else{
-				fprintf(stderr, "%s: wrote %d bytes to socket\n", gf_time(), nwritten);
+				fprintf(stderr, "%s: wrote %d bytes to socket\n", gf_time(), (int)nwritten);
 				tooptr += nwritten;
 				if (tooptr == toiptr) {
 					toiptr = tooptr = to;

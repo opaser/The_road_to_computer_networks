@@ -16,6 +16,7 @@
 #include <poll.h>
 #include <netdb.h>
 #include <fcntl.h>
+#include <netinet/in.h>
 /* define var */
 #define MAXLINE 4096
 #define SERV_PORT 9877
@@ -68,7 +69,8 @@ ssize_t Recvmsg(int, struct msghdr *, int);
 void Sendto(int, const void*, size_t, int, const SA *, socklen_t);
 void Setsockopt(int, int, int, const void *, socklen_t);
 void Sendmsg(int, const struct msghdr *, int);
-
+ssize_t Recv(int, void *, size_t, int); 
+void Send(int, const void *, size_t, int);
 /* signal.c */
 Sigfunc *Signal(int, Sigfunc *);
 
@@ -127,4 +129,10 @@ char *gf_time(void);
 
 /*str_cli_nonb.c*/
 void str_cli_nonb(FILE *, int);
+
+/*tcp_connect.c*/
+int	Tcp_connect(const char *, const char *);
+
+/*tcp_listen.c*/
+int Tcp_listen(const char *, const char *, socklen_t *); 
 #endif

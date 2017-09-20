@@ -53,10 +53,10 @@ static void err_doit(int errnoflag, int level, const char *fmt, va_list ap)
 	n = strlen(buf);
 	if (errnoflag)
 		snprintf(buf + n, MAXLINE - n, ":%s", strerror(errno_save));
-	strcat(buf, "\n");
+	strcat(buf, "%s\n");
 	
 	if(daemon_proc) { 
-		syslog(level, buf);
+		syslog(level, buf," ");
 	} else {
 		fflush(stdout);
 		fputs(buf, stderr);
