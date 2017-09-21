@@ -1,0 +1,86 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Accept	lib/wrapsock.c	/^Accept(int fd, struct sockaddr *sa, socklen_t *salenptr)$/;"	f
+BUFFSIZE	lib/unp.h	29;"	d
+Bind	lib/wrapsock.c	/^void Bind(int fd, const struct sockaddr *sa, socklen_t salen)$/;"	f
+Close	lib/wrapunix.c	/^void Close(int fd)$/;"	f
+Connect	lib/wrapsock.c	/^void Connect(int fd, const struct sockaddr *sa, socklen_t salen)$/;"	f
+DIR_MODE	lib/unp.h	32;"	d
+FILE_MODE	lib/unp.h	31;"	d
+Fcntl	lib/wrapunix.c	/^int Fcntl(int fd, int cmd, int arg)$/;"	f
+Fgets	lib/wrapstdio.c	/^Fgets(char *ptr, int n, FILE *stream)$/;"	f
+Fork	lib/wrapunix.c	/^pid_t Fork(void)$/;"	f
+Fputs	lib/wrapstdio.c	/^Fputs(const char *ptr, FILE *stream)$/;"	f
+Getsockname	lib/wrapsock.c	/^void Getsockname(int fd, struct sockaddr *sa, socklen_t *salenptr)$/;"	f
+HAVE_MSGHDR_MSG_CONTROL	lib/unp.h	48;"	d
+INET6_ADDRSTRLEN	lib/unp.h	44;"	d
+INFTIM	lib/unp.h	40;"	d
+IPV6	lib/unp.h	27;"	d
+Inet_ntop	lib/wraplib.c	/^const char * Inet_ntop(int family, const void *addrptr, char *strptr, size_t len)$/;"	f
+Inet_pton	lib/wraplib.c	/^void Inet_pton(int family, const char *strptr, void *addrptr)$/;"	f
+LISTENQ	lib/unp.h	28;"	d
+Listen	lib/wrapsock.c	/^void Listen(int fd, int backlog)$/;"	f
+MAXLINE	lib/unp.h	20;"	d
+Poll	lib/wrapsock.c	/^Poll(struct pollfd *fdarray, unsigned long nfds, int timeout)$/;"	f
+Read	lib/wrapunix.c	/^Read(int fd, void *ptr, size_t nbytes)$/;"	f
+Read_fd	lib/read_fd.c	/^Read_fd(int fd, void *ptr, size_t nbytes, int *recvfd)$/;"	f
+Readline	lib/readline.c	/^Readline(int fd, void *ptr, size_t maxlen)$/;"	f
+Recvfrom	lib/wrapsock.c	/^Recvfrom(int fd, void *ptr, size_t nbytes, int flags,$/;"	f
+Recvmsg	lib/wrapsock.c	/^Recvmsg(int fd, struct msghdr *msg, int flags)$/;"	f
+SA	lib/unp.h	26;"	d
+SERV_PORT	lib/unp.h	21;"	d
+SERV_PORT_STR	lib/unp.h	22;"	d
+Select	lib/wrapsock.c	/^Select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds,$/;"	f
+Sendmsg	lib/wrapsock.c	/^Sendmsg(int fd, const struct msghdr *msg, int flags)$/;"	f
+Sendto	lib/wrapsock.c	/^Sendto(int fd, const void *ptr, size_t nbytes, int flags,$/;"	f
+Setsockopt	lib/wrapsock.c	/^Setsockopt(int fd, int level, int optname, const void *optval, socklen_t optlen)$/;"	f
+Shutdown	lib/wrapsock.c	/^Shutdown(int fd, int how)$/;"	f
+Sigfunc	lib/unp.h	/^typedef void  Sigfunc(int);$/;"	t
+Signal	lib/signal.c	/^Signal(int signo, Sigfunc *func)	\/* for our signal() function *\/$/;"	f
+Sock_ntop	lib/sock_ntop.c	/^char *	Sock_ntop(const struct sockaddr *sa, socklen_t salen)$/;"	f
+Socket	lib/wrapsock.c	/^Socket(int family, int type, int protocol)$/;"	f
+Socketpair	lib/wrapsock.c	/^void Socketpair(int family, int type, int protocol, int *fd)$/;"	f
+Tcp_connect	lib/tcp_connect.c	/^Tcp_connect(const char *host, const char *serv)$/;"	f
+Tcp_listen	lib/tcp_listen.c	/^Tcp_listen(const char *host, const char *serv, socklen_t *addrlenp)$/;"	f
+UNIXDG_PATH	lib/unp.h	24;"	d
+UNIXSTR_PATH	lib/unp.h	23;"	d
+Waitpid	lib/wrapunix.c	/^Waitpid(pid_t pid, int *iptr, int options)$/;"	f
+Write	lib/wrapunix.c	/^Write(int fd, void *ptr, size_t nbytes)$/;"	f
+Write_fd	lib/write_fd.c	/^Write_fd(int fd, void *ptr, size_t nbytes, int sendfd)$/;"	f
+Writen	lib/writen.c	/^void Writen(int fd, void *ptr, size_t nbytes)$/;"	f
+__unp_h	lib/unp.h	2;"	d
+daemon_proc	lib/error.c	/^int		daemon_proc;$/;"	v
+dg_cli	lib/dg_cli.c	/^dg_cli(FILE *fp, int sockfd, const SA *pservaddr, socklen_t servlen)$/;"	f
+dg_echo	lib/dg_echo.c	/^dg_echo(int sockfd, SA *pcliaddr, socklen_t clilen)$/;"	f
+err_doit	lib/error.c	/^static void err_doit(int errnoflag, int level, const char *fmt, va_list ap)$/;"	f	file:
+err_msg	lib/error.c	/^err_msg(const char *fmt, ...) {$/;"	f
+err_quit	lib/error.c	/^void err_quit(const char *fmt, ...) {$/;"	f
+err_ret	lib/error.c	/^err_ret(const char *fmt, ...) {$/;"	f
+err_sys	lib/error.c	/^void err_sys(const char *fmt, ...)$/;"	f
+gf_time	lib/gf_time.c	/^gf_time(void)$/;"	f
+main	client/client.c	/^main(int argc, char **argv)$/;"	f
+main	server/server.c	/^int main(int argc, char **argv)$/;"	f
+max	lib/unp.h	37;"	d
+min	lib/unp.h	36;"	d
+my_open	lib/myopen.c	/^my_open(const char *pathname, int mode)$/;"	f
+my_read	lib/readline.c	/^my_read(int fd, char *ptr)$/;"	f	file:
+read_buf	lib/readline.c	/^static char read_buf[MAXLINE];$/;"	v	file:
+read_cnt	lib/readline.c	/^static int read_cnt;$/;"	v	file:
+read_fd	lib/read_fd.c	/^read_fd(int fd, void *ptr, size_t nbytes, int *recvfd)$/;"	f
+read_ptr	lib/readline.c	/^static char *read_ptr;$/;"	v	file:
+readline	lib/readline.c	/^readline(int fd, void *vptr, size_t maxlen)$/;"	f
+readlinebuf	lib/readline.c	/^readlinebuf(void **vptrptr)$/;"	f
+sig_chld	lib/sigchldwaitpid.c	/^void sig_chld(int signo)$/;"	f
+signal	lib/signal.c	/^signal(int signo, Sigfunc *func)$/;"	f
+sock_ntop	lib/sock_ntop.c	/^char *sock_ntop(const struct sockaddr *sa, socklen_t salen)$/;"	f
+str_cli	lib/str_cli.c	/^str_cli(FILE *fp, int sockfd)$/;"	f
+str_cli_nonb	lib/str_cli_nonb.c	/^str_cli_nonb(FILE *fp, int sockfd)$/;"	f
+str_echo	lib/str_echo.c	/^void str_echo(int sockfd)$/;"	f
+tcp_connect	lib/tcp_connect.c	/^tcp_connect(const char *host, const char *serv)$/;"	f
+tcp_listen	lib/tcp_listen.c	/^tcp_listen(const char *host, const char *serv, socklen_t *addrlenp)$/;"	f
+write_fd	lib/write_fd.c	/^write_fd(int fd, void *ptr, size_t nbytes, int sendfd)$/;"	f
+writen	lib/writen.c	/^writen(int fd, const void *vptr, size_t n)$/;"	f
