@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/unp.dir/dg_cli.c.o"
   "CMakeFiles/unp.dir/dg_echo.c.o"
+  "CMakeFiles/unp.dir/dg_echo_sigio.c.o"
   "CMakeFiles/unp.dir/error.c.o"
   "CMakeFiles/unp.dir/gf_time.c.o"
   "CMakeFiles/unp.dir/myopen.c.o"
@@ -9,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/unp.dir/sigchldwaitpid.c.o"
   "CMakeFiles/unp.dir/signal.c.o"
   "CMakeFiles/unp.dir/sock_ntop.c.o"
+  "CMakeFiles/unp.dir/sockatmark.c.o"
   "CMakeFiles/unp.dir/str_cli.c.o"
   "CMakeFiles/unp.dir/str_cli_nonb.c.o"
   "CMakeFiles/unp.dir/str_echo.c.o"

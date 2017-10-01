@@ -3,31 +3,19 @@
 int 
 main(int argc, char **argv)
 {
-	int 	sockfd;
+	int sockfd;
+	struct sockaddr_in servaddr;
+	
+	if(argc != 2)
+		err_quit("usage: udpcli01 <IPaddress>");
 
-	if (argc != 3)
-		err_quit("usage: tcpsend01 <host> <prot#>");
+	bzero(&servaddr, sizeof(servaddr));
+	servaddr.sin_family = AF_INET;
+	servaddr.sin_port = htons(SERV_PORT);
+	Inet_pton(AF_INET, argv[1], &servaddr.sin_addr);
 
-	sockfd = Tcp_connect(argv[1], argv[2]);
+	sockfd = Socket(AF_INET, SOCK_DGRAM, 0);
 
-	Write(sockfd, "123", 3);
-	printf("wrote 3 bytes of normal data\n");
-	sleep(1);
-
-	Send(sockfd, "4", 1, MSG_OOB);
-	printf("wrote 1 byte of OOB data\n");
-	sleep(1);
-
-	Write(sockfd, "56", 2);
-	printf("wrote 2 bytes of normal data\n");
-	sleep(1);
-
-	Send(sockfd, "78", 2, MSG_OOB);
-	printf("wroe 2 bytes of OOB data\n");
-	sleep(1);
-
-	Write(sockfd, "89", 2);
-	printf("wrote 2 bytes of normal data\n");
-	sleep(1);
+	dg_cli(stdin, sockfd, (SA *) &servaddr, sizeof(servaddr));
 	return 0;
 }

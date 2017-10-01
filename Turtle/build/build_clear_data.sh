@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ../lib/makefile/
-make clean
-make
+rm -rf *
+cd ../../server/makefile/
+rm -rf *
 cd ../../client/makefile/
-make clean
-make 
+rm -rf *

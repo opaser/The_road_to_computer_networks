@@ -177,3 +177,14 @@ Send(int fd, const void *ptr, size_t nbytes, int flags)
 		err_sys("send error");
 }
 /*end Send*/
+
+/*include Sockatmark*/
+int
+Sockatmark(int fd)
+{
+	int 	n;
+	if( (n = sockatmark(fd)) < 0)
+		err_sys("sockatmark error");
+	return (n);
+}
+/*end Sockatmark*/

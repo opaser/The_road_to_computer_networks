@@ -52,3 +52,51 @@ int Fcntl(int fd, int cmd, int arg)
 	return(n);
 }
 /*end Fcntl*/
+
+/*include Ioct*/
+int 
+Ioctl(int fd, int request, void *arg)
+{
+	int n;
+	if( (n = ioctl(fd, request, arg)) == -1)
+		err_sys("ioctl error");
+	return (n);
+}
+/*end Ioct*/
+
+/*include Malloc*/
+void *
+Malloc(size_t size)
+{
+	void *ptr;
+	if( (ptr = malloc(size)) == NULL)
+		err_sys("malloc error");
+	return (ptr);
+}
+/*end Malloc*/
+
+/*include Sigaddset*/
+void
+Sigaddset(sigset_t *set, int signo)
+{
+	if(sigaddset(set, signo) == -1)
+		err_sys("sigaddset error");
+}
+/*end Sigaddset*/
+
+/*include Sigemptyset*/
+void
+Sigemptyset(sigset_t *set)
+{
+	if(sigemptyset(set) == -1)
+		err_sys("sigemptyset error");
+}
+/*end Sigemptyset*/
+
+/*include sigprocmask*/
+void 
+Sigprocmask(int how, const sigset_t *set, sigset_t *oset)
+{
+	if(sigprocmask(how, set, oset) == -1)
+		err_sys("sigprocmask error");
+}

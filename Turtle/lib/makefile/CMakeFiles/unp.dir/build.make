@@ -105,9 +105,33 @@ CMakeFiles/unp.dir/dg_echo.c.o.provides: CMakeFiles/unp.dir/dg_echo.c.o.requires
 CMakeFiles/unp.dir/dg_echo.c.o.provides.build: CMakeFiles/unp.dir/dg_echo.c.o
 
 
+CMakeFiles/unp.dir/dg_echo_sigio.c.o: CMakeFiles/unp.dir/flags.make
+CMakeFiles/unp.dir/dg_echo_sigio.c.o: ../dg_echo_sigio.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/unp.dir/dg_echo_sigio.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/dg_echo_sigio.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/dg_echo_sigio.c
+
+CMakeFiles/unp.dir/dg_echo_sigio.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/unp.dir/dg_echo_sigio.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opas/workspace/unix_network_programming/Turtle/lib/dg_echo_sigio.c > CMakeFiles/unp.dir/dg_echo_sigio.c.i
+
+CMakeFiles/unp.dir/dg_echo_sigio.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unp.dir/dg_echo_sigio.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opas/workspace/unix_network_programming/Turtle/lib/dg_echo_sigio.c -o CMakeFiles/unp.dir/dg_echo_sigio.c.s
+
+CMakeFiles/unp.dir/dg_echo_sigio.c.o.requires:
+
+.PHONY : CMakeFiles/unp.dir/dg_echo_sigio.c.o.requires
+
+CMakeFiles/unp.dir/dg_echo_sigio.c.o.provides: CMakeFiles/unp.dir/dg_echo_sigio.c.o.requires
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/dg_echo_sigio.c.o.provides.build
+.PHONY : CMakeFiles/unp.dir/dg_echo_sigio.c.o.provides
+
+CMakeFiles/unp.dir/dg_echo_sigio.c.o.provides.build: CMakeFiles/unp.dir/dg_echo_sigio.c.o
+
+
 CMakeFiles/unp.dir/error.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/error.c.o: ../error.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/unp.dir/error.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/unp.dir/error.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/error.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/error.c
 
 CMakeFiles/unp.dir/error.c.i: cmake_force
@@ -131,7 +155,7 @@ CMakeFiles/unp.dir/error.c.o.provides.build: CMakeFiles/unp.dir/error.c.o
 
 CMakeFiles/unp.dir/gf_time.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/gf_time.c.o: ../gf_time.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/unp.dir/gf_time.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/unp.dir/gf_time.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/gf_time.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/gf_time.c
 
 CMakeFiles/unp.dir/gf_time.c.i: cmake_force
@@ -155,7 +179,7 @@ CMakeFiles/unp.dir/gf_time.c.o.provides.build: CMakeFiles/unp.dir/gf_time.c.o
 
 CMakeFiles/unp.dir/myopen.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/myopen.c.o: ../myopen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/unp.dir/myopen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/unp.dir/myopen.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/myopen.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/myopen.c
 
 CMakeFiles/unp.dir/myopen.c.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/unp.dir/myopen.c.o.provides.build: CMakeFiles/unp.dir/myopen.c.o
 
 CMakeFiles/unp.dir/read_fd.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/read_fd.c.o: ../read_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/unp.dir/read_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/unp.dir/read_fd.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/read_fd.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/read_fd.c
 
 CMakeFiles/unp.dir/read_fd.c.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/unp.dir/read_fd.c.o.provides.build: CMakeFiles/unp.dir/read_fd.c.o
 
 CMakeFiles/unp.dir/readline.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/readline.c.o: ../readline.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/unp.dir/readline.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/unp.dir/readline.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/readline.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/readline.c
 
 CMakeFiles/unp.dir/readline.c.i: cmake_force
@@ -227,7 +251,7 @@ CMakeFiles/unp.dir/readline.c.o.provides.build: CMakeFiles/unp.dir/readline.c.o
 
 CMakeFiles/unp.dir/sigchldwaitpid.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/sigchldwaitpid.c.o: ../sigchldwaitpid.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/unp.dir/sigchldwaitpid.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/unp.dir/sigchldwaitpid.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/sigchldwaitpid.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/sigchldwaitpid.c
 
 CMakeFiles/unp.dir/sigchldwaitpid.c.i: cmake_force
@@ -251,7 +275,7 @@ CMakeFiles/unp.dir/sigchldwaitpid.c.o.provides.build: CMakeFiles/unp.dir/sigchld
 
 CMakeFiles/unp.dir/signal.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/signal.c.o: ../signal.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/unp.dir/signal.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/unp.dir/signal.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/signal.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/signal.c
 
 CMakeFiles/unp.dir/signal.c.i: cmake_force
@@ -275,7 +299,7 @@ CMakeFiles/unp.dir/signal.c.o.provides.build: CMakeFiles/unp.dir/signal.c.o
 
 CMakeFiles/unp.dir/sock_ntop.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/sock_ntop.c.o: ../sock_ntop.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/unp.dir/sock_ntop.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/unp.dir/sock_ntop.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/sock_ntop.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/sock_ntop.c
 
 CMakeFiles/unp.dir/sock_ntop.c.i: cmake_force
@@ -297,9 +321,33 @@ CMakeFiles/unp.dir/sock_ntop.c.o.provides: CMakeFiles/unp.dir/sock_ntop.c.o.requ
 CMakeFiles/unp.dir/sock_ntop.c.o.provides.build: CMakeFiles/unp.dir/sock_ntop.c.o
 
 
+CMakeFiles/unp.dir/sockatmark.c.o: CMakeFiles/unp.dir/flags.make
+CMakeFiles/unp.dir/sockatmark.c.o: ../sockatmark.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/unp.dir/sockatmark.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/sockatmark.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/sockatmark.c
+
+CMakeFiles/unp.dir/sockatmark.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/unp.dir/sockatmark.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/opas/workspace/unix_network_programming/Turtle/lib/sockatmark.c > CMakeFiles/unp.dir/sockatmark.c.i
+
+CMakeFiles/unp.dir/sockatmark.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/unp.dir/sockatmark.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/opas/workspace/unix_network_programming/Turtle/lib/sockatmark.c -o CMakeFiles/unp.dir/sockatmark.c.s
+
+CMakeFiles/unp.dir/sockatmark.c.o.requires:
+
+.PHONY : CMakeFiles/unp.dir/sockatmark.c.o.requires
+
+CMakeFiles/unp.dir/sockatmark.c.o.provides: CMakeFiles/unp.dir/sockatmark.c.o.requires
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/sockatmark.c.o.provides.build
+.PHONY : CMakeFiles/unp.dir/sockatmark.c.o.provides
+
+CMakeFiles/unp.dir/sockatmark.c.o.provides.build: CMakeFiles/unp.dir/sockatmark.c.o
+
+
 CMakeFiles/unp.dir/str_cli.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/str_cli.c.o: ../str_cli.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/unp.dir/str_cli.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/unp.dir/str_cli.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/str_cli.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/str_cli.c
 
 CMakeFiles/unp.dir/str_cli.c.i: cmake_force
@@ -323,7 +371,7 @@ CMakeFiles/unp.dir/str_cli.c.o.provides.build: CMakeFiles/unp.dir/str_cli.c.o
 
 CMakeFiles/unp.dir/str_cli_nonb.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/str_cli_nonb.c.o: ../str_cli_nonb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/unp.dir/str_cli_nonb.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/unp.dir/str_cli_nonb.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/str_cli_nonb.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/str_cli_nonb.c
 
 CMakeFiles/unp.dir/str_cli_nonb.c.i: cmake_force
@@ -347,7 +395,7 @@ CMakeFiles/unp.dir/str_cli_nonb.c.o.provides.build: CMakeFiles/unp.dir/str_cli_n
 
 CMakeFiles/unp.dir/str_echo.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/str_echo.c.o: ../str_echo.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/unp.dir/str_echo.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/unp.dir/str_echo.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/str_echo.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/str_echo.c
 
 CMakeFiles/unp.dir/str_echo.c.i: cmake_force
@@ -371,7 +419,7 @@ CMakeFiles/unp.dir/str_echo.c.o.provides.build: CMakeFiles/unp.dir/str_echo.c.o
 
 CMakeFiles/unp.dir/tcp_connect.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/tcp_connect.c.o: ../tcp_connect.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/unp.dir/tcp_connect.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/unp.dir/tcp_connect.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/tcp_connect.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/tcp_connect.c
 
 CMakeFiles/unp.dir/tcp_connect.c.i: cmake_force
@@ -395,7 +443,7 @@ CMakeFiles/unp.dir/tcp_connect.c.o.provides.build: CMakeFiles/unp.dir/tcp_connec
 
 CMakeFiles/unp.dir/tcp_listen.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/tcp_listen.c.o: ../tcp_listen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/unp.dir/tcp_listen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/unp.dir/tcp_listen.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/tcp_listen.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/tcp_listen.c
 
 CMakeFiles/unp.dir/tcp_listen.c.i: cmake_force
@@ -419,7 +467,7 @@ CMakeFiles/unp.dir/tcp_listen.c.o.provides.build: CMakeFiles/unp.dir/tcp_listen.
 
 CMakeFiles/unp.dir/wraplib.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/wraplib.c.o: ../wraplib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/unp.dir/wraplib.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/unp.dir/wraplib.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/wraplib.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/wraplib.c
 
 CMakeFiles/unp.dir/wraplib.c.i: cmake_force
@@ -443,7 +491,7 @@ CMakeFiles/unp.dir/wraplib.c.o.provides.build: CMakeFiles/unp.dir/wraplib.c.o
 
 CMakeFiles/unp.dir/wrapsock.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/wrapsock.c.o: ../wrapsock.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/unp.dir/wrapsock.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/unp.dir/wrapsock.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/wrapsock.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/wrapsock.c
 
 CMakeFiles/unp.dir/wrapsock.c.i: cmake_force
@@ -467,7 +515,7 @@ CMakeFiles/unp.dir/wrapsock.c.o.provides.build: CMakeFiles/unp.dir/wrapsock.c.o
 
 CMakeFiles/unp.dir/wrapstdio.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/wrapstdio.c.o: ../wrapstdio.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/unp.dir/wrapstdio.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/unp.dir/wrapstdio.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/wrapstdio.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/wrapstdio.c
 
 CMakeFiles/unp.dir/wrapstdio.c.i: cmake_force
@@ -491,7 +539,7 @@ CMakeFiles/unp.dir/wrapstdio.c.o.provides.build: CMakeFiles/unp.dir/wrapstdio.c.
 
 CMakeFiles/unp.dir/wrapunix.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/wrapunix.c.o: ../wrapunix.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/unp.dir/wrapunix.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/unp.dir/wrapunix.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/wrapunix.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/wrapunix.c
 
 CMakeFiles/unp.dir/wrapunix.c.i: cmake_force
@@ -515,7 +563,7 @@ CMakeFiles/unp.dir/wrapunix.c.o.provides.build: CMakeFiles/unp.dir/wrapunix.c.o
 
 CMakeFiles/unp.dir/write_fd.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/write_fd.c.o: ../write_fd.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/unp.dir/write_fd.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/unp.dir/write_fd.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/write_fd.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/write_fd.c
 
 CMakeFiles/unp.dir/write_fd.c.i: cmake_force
@@ -539,7 +587,7 @@ CMakeFiles/unp.dir/write_fd.c.o.provides.build: CMakeFiles/unp.dir/write_fd.c.o
 
 CMakeFiles/unp.dir/writen.c.o: CMakeFiles/unp.dir/flags.make
 CMakeFiles/unp.dir/writen.c.o: ../writen.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/unp.dir/writen.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/unp.dir/writen.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/unp.dir/writen.c.o   -c /home/opas/workspace/unix_network_programming/Turtle/lib/writen.c
 
 CMakeFiles/unp.dir/writen.c.i: cmake_force
@@ -565,6 +613,7 @@ CMakeFiles/unp.dir/writen.c.o.provides.build: CMakeFiles/unp.dir/writen.c.o
 unp_OBJECTS = \
 "CMakeFiles/unp.dir/dg_cli.c.o" \
 "CMakeFiles/unp.dir/dg_echo.c.o" \
+"CMakeFiles/unp.dir/dg_echo_sigio.c.o" \
 "CMakeFiles/unp.dir/error.c.o" \
 "CMakeFiles/unp.dir/gf_time.c.o" \
 "CMakeFiles/unp.dir/myopen.c.o" \
@@ -573,6 +622,7 @@ unp_OBJECTS = \
 "CMakeFiles/unp.dir/sigchldwaitpid.c.o" \
 "CMakeFiles/unp.dir/signal.c.o" \
 "CMakeFiles/unp.dir/sock_ntop.c.o" \
+"CMakeFiles/unp.dir/sockatmark.c.o" \
 "CMakeFiles/unp.dir/str_cli.c.o" \
 "CMakeFiles/unp.dir/str_cli_nonb.c.o" \
 "CMakeFiles/unp.dir/str_echo.c.o" \
@@ -590,6 +640,7 @@ unp_EXTERNAL_OBJECTS =
 
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/dg_cli.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/dg_echo.c.o
+/home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/dg_echo_sigio.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/error.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/gf_time.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/myopen.c.o
@@ -598,6 +649,7 @@ unp_EXTERNAL_OBJECTS =
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/sigchldwaitpid.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/signal.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/sock_ntop.c.o
+/home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/sockatmark.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/str_cli.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/str_cli_nonb.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/str_echo.c.o
@@ -611,7 +663,7 @@ unp_EXTERNAL_OBJECTS =
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/writen.c.o
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/build.make
 /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a: CMakeFiles/unp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking C static library /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Linking C static library /home/opas/workspace/unix_network_programming/Turtle/common/libunp.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/unp.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unp.dir/link.txt --verbose=$(VERBOSE)
 
@@ -622,6 +674,7 @@ CMakeFiles/unp.dir/build: /home/opas/workspace/unix_network_programming/Turtle/c
 
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/dg_cli.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/dg_echo.c.o.requires
+CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/dg_echo_sigio.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/error.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/gf_time.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/myopen.c.o.requires
@@ -630,6 +683,7 @@ CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/readline.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/sigchldwaitpid.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/signal.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/sock_ntop.c.o.requires
+CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/sockatmark.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/str_cli.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/str_cli_nonb.c.o.requires
 CMakeFiles/unp.dir/requires: CMakeFiles/unp.dir/str_echo.c.o.requires

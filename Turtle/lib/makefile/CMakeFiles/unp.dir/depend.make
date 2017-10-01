@@ -7,6 +7,9 @@ CMakeFiles/unp.dir/dg_cli.c.o: ../unp.h
 CMakeFiles/unp.dir/dg_echo.c.o: ../dg_echo.c
 CMakeFiles/unp.dir/dg_echo.c.o: ../unp.h
 
+CMakeFiles/unp.dir/dg_echo_sigio.c.o: ../dg_echo_sigio.c
+CMakeFiles/unp.dir/dg_echo_sigio.c.o: ../unp.h
+
 CMakeFiles/unp.dir/error.c.o: ../error.c
 CMakeFiles/unp.dir/error.c.o: ../unp.h
 
@@ -30,6 +33,9 @@ CMakeFiles/unp.dir/signal.c.o: ../unp.h
 
 CMakeFiles/unp.dir/sock_ntop.c.o: ../sock_ntop.c
 CMakeFiles/unp.dir/sock_ntop.c.o: ../unp.h
+
+CMakeFiles/unp.dir/sockatmark.c.o: ../sockatmark.c
+CMakeFiles/unp.dir/sockatmark.c.o: ../unp.h
 
 CMakeFiles/unp.dir/str_cli.c.o: ../str_cli.c
 CMakeFiles/unp.dir/str_cli.c.o: ../unp.h

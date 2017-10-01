@@ -17,6 +17,7 @@
 #include <netdb.h>
 #include <fcntl.h>
 #include <netinet/in.h>
+#include <sys/ioctl.h>
 /* define var */
 #define MAXLINE 4096
 #define SERV_PORT 9877
@@ -52,6 +53,8 @@ typedef void  Sigfunc(int);
 char * sock_ntop(const struct sockaddr *sa, socklen_t salen);
 char * Sock_ntop(const struct sockaddr *sa, socklen_t salen);
 
+/*sockatmark.c*/
+int sockatmark(int);
 /* wrapsock.c  */
 
 void Getsockname(int, SA *, socklen_t *);
@@ -71,6 +74,8 @@ void Setsockopt(int, int, int, const void *, socklen_t);
 void Sendmsg(int, const struct msghdr *, int);
 ssize_t Recv(int, void *, size_t, int); 
 void Send(int, const void *, size_t, int);
+int Sockatmark(int);
+
 /* signal.c */
 Sigfunc *Signal(int, Sigfunc *);
 
@@ -81,7 +86,11 @@ ssize_t Read(int, void *, size_t);
 void	Write(int, void *, size_t);
 pid_t Waitpid(pid_t, int *, int);
 int   Fcntl(int, int, int);
-
+int Ioctl(int, int, void *);
+void *Malloc(size_t);
+void Sigemptyset(sigset_t *);
+void Sigaddset(sigset_t *, int);
+void Sigprocmask(int, const sigset_t *, sigset_t *);
 /* writen.c */
 ssize_t writen(int, const void *, size_t);
 void Writen(int, void *, size_t);
@@ -131,8 +140,11 @@ char *gf_time(void);
 void str_cli_nonb(FILE *, int);
 
 /*tcp_connect.c*/
-int	Tcp_connect(const char *, const char *);
+int Tcp_connect(const char *, const char *);
 
 /*tcp_listen.c*/
 int Tcp_listen(const char *, const char *, socklen_t *); 
+
+/*dg_echo_sigio*/
+void dg_echo_sigio(int, SA *, socklen_t);
 #endif

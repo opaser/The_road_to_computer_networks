@@ -1,3 +1,8 @@
 #!/bin/bash
-product=$1
-g++ ../lib/unp.h ../lib/dg_cli.c ../lib/error.c ../lib/sigchldwaitpid.c ../lib/sock_ntop.c ../lib/str_echo.c ../lib/wraplib.c ../lib/wrapstdio.c ../lib/writen.c ../lib/dg_echo.c ../lib/readline.c ../lib/signal.c ../lib/str_cli.c ../lib/wrapsock.c ../lib/wrapunix.c ../lib/write_fd.c ../lib/read_fd.c ../lib/myopen.c ../client/openfile.c -o ${product}
+cd ..
+./cx_client  127.0.0.1 < input
+./cx_client  127.0.0.1 < input
+./cx_client  127.0.0.1 < input
+./cx_client  127.0.0.1 < input
+./cx_client  127.0.0.1 < input
+./cx_client  127.0.0.1 < input

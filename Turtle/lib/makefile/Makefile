@@ -177,6 +177,33 @@ dg_echo.c.s:
 	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/dg_echo.c.s
 .PHONY : dg_echo.c.s
 
+dg_echo_sigio.o: dg_echo_sigio.c.o
+
+.PHONY : dg_echo_sigio.o
+
+# target to build an object file
+dg_echo_sigio.c.o:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/dg_echo_sigio.c.o
+.PHONY : dg_echo_sigio.c.o
+
+dg_echo_sigio.i: dg_echo_sigio.c.i
+
+.PHONY : dg_echo_sigio.i
+
+# target to preprocess a source file
+dg_echo_sigio.c.i:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/dg_echo_sigio.c.i
+.PHONY : dg_echo_sigio.c.i
+
+dg_echo_sigio.s: dg_echo_sigio.c.s
+
+.PHONY : dg_echo_sigio.s
+
+# target to generate assembly for a file
+dg_echo_sigio.c.s:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/dg_echo_sigio.c.s
+.PHONY : dg_echo_sigio.c.s
+
 error.o: error.c.o
 
 .PHONY : error.o
@@ -392,6 +419,33 @@ sock_ntop.s: sock_ntop.c.s
 sock_ntop.c.s:
 	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/sock_ntop.c.s
 .PHONY : sock_ntop.c.s
+
+sockatmark.o: sockatmark.c.o
+
+.PHONY : sockatmark.o
+
+# target to build an object file
+sockatmark.c.o:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/sockatmark.c.o
+.PHONY : sockatmark.c.o
+
+sockatmark.i: sockatmark.c.i
+
+.PHONY : sockatmark.i
+
+# target to preprocess a source file
+sockatmark.c.i:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/sockatmark.c.i
+.PHONY : sockatmark.c.i
+
+sockatmark.s: sockatmark.c.s
+
+.PHONY : sockatmark.s
+
+# target to generate assembly for a file
+sockatmark.c.s:
+	$(MAKE) -f CMakeFiles/unp.dir/build.make CMakeFiles/unp.dir/sockatmark.c.s
+.PHONY : sockatmark.c.s
 
 str_cli.o: str_cli.c.o
 
@@ -705,6 +759,9 @@ help:
 	@echo "... dg_echo.o"
 	@echo "... dg_echo.i"
 	@echo "... dg_echo.s"
+	@echo "... dg_echo_sigio.o"
+	@echo "... dg_echo_sigio.i"
+	@echo "... dg_echo_sigio.s"
 	@echo "... error.o"
 	@echo "... error.i"
 	@echo "... error.s"
@@ -729,6 +786,9 @@ help:
 	@echo "... sock_ntop.o"
 	@echo "... sock_ntop.i"
 	@echo "... sock_ntop.s"
+	@echo "... sockatmark.o"
+	@echo "... sockatmark.i"
+	@echo "... sockatmark.s"
 	@echo "... str_cli.o"
 	@echo "... str_cli.i"
 	@echo "... str_cli.s"
