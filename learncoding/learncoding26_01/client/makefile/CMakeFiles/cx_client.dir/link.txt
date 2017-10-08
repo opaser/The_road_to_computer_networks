@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/cx_client.dir/client.c.o  -o /home/opas/workspace/unix_network_programming/Turtle/cx_client  -L/home/opas/workspace/unix_network_programming/Turtle/client/../common -Wl,-rpath,/home/opas/workspace/unix_network_programming/Turtle/client/../common -lunp 
