@@ -122,6 +122,9 @@ void str_cli(FILE *, int);
 ssize_t readline(int, void *, size_t);
 ssize_t Readline(int, void *, size_t);
 
+/*readn*/
+ssize_t Readn(int, void *, size_t);
+
 /* dg_echo.c */
 void dg_echo(int, SA *, socklen_t);
 
@@ -148,4 +151,10 @@ int Tcp_listen(const char *, const char *, socklen_t *);
 
 /*dg_echo_sigio*/
 void dg_echo_sigio(int, SA *, socklen_t);
+
+/*pr_cpu_time.c*/
+void pr_cpu_time(void);
+
+/*web_child.c*/
+void web_child(int);
 #endif

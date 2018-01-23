@@ -1,3 +1,0 @@
-/home/opas/workspace/unix_network_programming/Turtle/server/makefile/CMakeFiles/rebuild_cache.dir
-/home/opas/workspace/unix_network_programming/Turtle/server/makefile/CMakeFiles/edit_cache.dir
-/home/opas/workspace/unix_network_programming/Turtle/server/makefile/CMakeFiles/cx_server.dir

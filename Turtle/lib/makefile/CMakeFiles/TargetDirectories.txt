@@ -1,3 +1,0 @@
-/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles/rebuild_cache.dir
-/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles/edit_cache.dir
-/home/opas/workspace/unix_network_programming/Turtle/lib/makefile/CMakeFiles/unp.dir

@@ -1,43 +1,51 @@
-#include "../lib/unpthread.h"
+#include "unp.h"
 
-#define NLOOP 5000
-
-int counter;
-pthread_mutex_t counter_mutex = PTHREAD_MUTEX_INITIALIZER; 
-pthread_cond_t ndone_cond = PTHREAD_COND_INITIALIZER; 
-void *doit(void *); 
-void *sleepdo(void *); 
-int main(int argc, char **argv) 
-{	
-	pthread_t tidA, tidB; 
-	Pthread_create(&tidA, NULL, &doit, NULL); 
-	Pthread_create(&tidB, NULL, &sleepdo, NULL); 
-	Pthread_join(tidA, NULL); 
-	Pthread_join(tidB, NULL); 
-	return 0; 
-} 
-void *
-doit(void *vptr)
+int
+main(int argc, char **argc)
 {
-	Pthread_mutex_lock(&counter_mutex);
-	printf("doit start\n");
-	Pthread_cond_wait(&ndone_cond, &counter_mutex);
+	int			listenfd, connfd;
+	pid_t		childpid;
+	void		sig_child(int), sig_int(int), web_child(int);
+	socklen_t 	clilen, addrlen;
+	struct sockaddr *cliaddr;
 
-	printf("doit end\n");
-	Pthread_mutex_unlock(&counter_mutex);
-	return (NULL);
+	if(argc == 2)
+		listenfd = Tcp_listen(NULL, argv[1], &addrlen);
+	else if (argc == 3)
+		listenfd = Tcp_listen(argv[1], argv[2], &addrlen);
+	else
+		err_quit("usage: server [<host>] <port#>");
+	
+	cliaddr = Malloc(addrlen);
+	Signal(SIGCHLD, sig_chld);
+	Signal(SIGINT, sig_int);
+
+	for(;;)
+	{
+		clilen = addrlen;
+		if( (connfd = accept(listenfd, cliaddr, &clilen)) < 0)
+		{
+			if(errno == EINTR)
+				continue;
+			else
+				err_sys("accept error");
+		}
+		if( (childpid = Fork()) == 0)
+		{
+			Close(listenfd);
+			web_child(connfd);
+			exit(0);
+		}
+		Close(connfd);
+	}
 }
 
-void *
-sleepdo(void *vptr)
+void 
+sig_int(int signo)
 {
-	sleep(10);
-	Pthread_mutex_lock(&counter_mutex);
+	void pr_cpu_time(void);
 
-	printf("sleepdo start\n");
-	Pthread_cond_signal(&ndone_cond);
-	sleep(5);
-	printf("sleepdo end\n");
-	Pthread_mutex_unlock(&counter_mutex);
-	return (NULL);
+	pr_cpu_time();
+	exit(0);
 }
+
