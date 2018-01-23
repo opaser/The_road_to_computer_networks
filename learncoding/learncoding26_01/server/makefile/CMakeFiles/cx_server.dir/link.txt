@@ -1,1 +1,0 @@
-/usr/bin/cc   -rdynamic CMakeFiles/cx_server.dir/server.c.o  -o /home/opas/workspace/unix_network_programming/Turtle/cx_server  -L/home/opas/workspace/unix_network_programming/Turtle/server/../common -Wl,-rpath,/home/opas/workspace/unix_network_programming/Turtle/server/../common -lunp -lpthread 
