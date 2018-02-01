@@ -1,11 +1,11 @@
 #include "unp.h"
 
 int
-main(int argc, char **argc)
+main(int argc, char **argv)
 {
 	int			listenfd, connfd;
 	pid_t		childpid;
-	void		sig_child(int), sig_int(int), web_child(int);
+	void		sig_chld(int), sig_int(int), web_child(int);
 	socklen_t 	clilen, addrlen;
 	struct sockaddr *cliaddr;
 
